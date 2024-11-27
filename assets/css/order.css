@@ -1,0 +1,267 @@
+/* order-section */
+
+
+#order {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu, .other-dish {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul, .other-dish ul {
+    display: grid;
+    gap: 10px;
+
+}
+.menu ul h1, .other-dish ul h1{
+    text-align: center;
+    
+}
+
+
+.menu li, .other-dish li {
+    list-style: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:  0.3s;
+}
+.menu li a, .other-dish li a{
+    text-decoration: none;
+    color: #ff9800;
+}
+.menu li.active, .other-dish li.active {
+    background-color: #ff6f61;
+    color: white;
+}
+
+
+.menu li a, .other-dish li a{
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; 
+}
+
+.menu li a:active, .other-dish li a:active {
+    transform: scale(1.2);
+    font-size: 1.2rem;
+}
+
+.menu li a::after, .other-dish li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    box-shadow: #c94444 3px 0 10px;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu li a:active::after, .other-dish li a:active::after {
+    width: 100%;
+}
+
+.image {
+    text-align: center;
+    padding: 20px;
+
+
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: opacity 0.3s;
+}
+
+.customize {
+   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.customize-order input[type="range"], .customize-order input[type="number"], .customize-order select {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.customize-order label {
+    font-weight: bold;
+}
+
+.menu-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-detail input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 15px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff503f;
+}
+
+customize-order {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+@media (max-width: 768px) {
+    #order {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    /* width: 200px; */
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+}
+
+.card .detail {
+    padding: 10px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Category */
+.CATEGORYS {
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+.CATEGORYS ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.CATEGORYS li {
+    margin-bottom: 8px;
+    /* Space between items */
+    box-shadow: 2px 1px 5px white;
+}
+
+.CATEGORYS a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffff;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.CATEGORYS a:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    background-color: #ffff;
+    color: black;
+}
+
+/* Basic styling for the container */
+.selection {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* Allows wrapping on smaller screens */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .selection {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .selection img {
+        height: auto;
+        width: 500px;
+    }
+
+    .selection .ingredients,
+    .selection .menu {
+        width: 100%;
+    }
+
+    .selection h1 {
+        font-size: 24px;
+    }
+
+    .selection li a {
+        font-size: 16px;
+    }
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h3 {
+    color: black;
+}

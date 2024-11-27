@@ -1,0 +1,94 @@
+/* Gallery title styling */
+.gallery-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Gallery container styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatic column layout */
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Gallery item styling */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    background: #fff;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Gallery item image styling */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container with good cropping */
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover effects for gallery item */
+.gallery-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+    opacity: 0.85; /* Image will become slightly transparent */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Fade-in animation for gallery item */
+.gallery-item {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries for responsiveness */
+
+/* For medium-sized screens */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adjust for smaller screens */
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for smaller screens */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 10px; /* Reduce padding further */
+    }
+}

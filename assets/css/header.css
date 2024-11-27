@@ -1,0 +1,121 @@
+/* Header */
+header {
+    background-color: #2c2525;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+}
+
+.logo img {
+    width: 90px;
+    border-radius: 50px;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: #ff9800;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+.time {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Hamburger Icon */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    /* On small screens, hide the nav menu and show the hamburger icon */
+    nav {
+        position: absolute;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        background-color: #2c2525;
+        height: 100vh;
+        padding: 30px;
+        box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    nav.active {
+        transform: translateX(250px); /* Slide in from left */
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 20;
+    }
+
+    nav.active ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav.active ul li a {
+        font-size: 1.2rem;
+    }
+
+    /* Hamburger icon transformation when active */
+    .hamburger-menu.active i {
+        transform: rotate(90deg);
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
